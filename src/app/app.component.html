@@ -1,0 +1,10 @@
+<div class="po-wrapper" *ngIf="isLogged">
+  <po-toolbar [p-title]="'Treinamento PO UI'"></po-toolbar>
+  <po-menu [p-menus]="menu" [p-collapsed]="false"></po-menu>
+
+  <router-outlet></router-outlet>
+</div>
+
+<po-page-login *ngIf="!isLogged"
+  p-authentication-url="http://localhost:8080/rest/poui/login">
+</po-page-login>

@@ -1,0 +1,19 @@
+<po-page-list
+    p-title="Monitor Application Server"
+    [p-actions]="actions"
+    [p-breadcrumb]="breadcrumb"
+    p-subtitle="p-subtitle"
+>
+    <po-table
+        p-service-api="http://localhost:8080/rest/poui/appmonitor"
+        [p-actions]="actions"
+        [p-selectable]="true"
+        [p-hide-select-all]="true"
+        (p-selected)="select1($event)"
+        (p-unselected)="select1($event)"
+    >
+        
+    </po-table>
+
+
+</po-page-list>
