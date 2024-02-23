@@ -31,15 +31,16 @@ export class AppComponent implements OnInit {
     console.log(sessionStorage.getItem('PO_USER_LOGIN'));
   }
 
+  ngAfterViewInit() {
 
-  protected closeApp() {
-
-    if (this.proAppConfigService.insideProtheus()) {
-      alert('O App está sendo executado dentro do Protheus.');
-    } else {
-      alert('O App não está sendo executado dentro do Protheus.');
-    }
   }
 
 
+  
+
+  Exit() {
+    this.proAppConfigService.callAppClose(true);
+  }
+
+  
 }

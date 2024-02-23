@@ -1,4 +1,4 @@
-<po-page-list
+<po-page-list #listaconn
     p-title="Monitor Application Server"
     [p-actions]="actions"
     [p-breadcrumb]="breadcrumb"
@@ -6,11 +6,19 @@
 >
     <po-table
         p-service-api="http://localhost:8080/rest/poui/appmonitor"
-        [p-actions]="actions"
+        [p-columns]="appMonCols"
+        [p-actions]="lineActions"
         [p-selectable]="true"
-        [p-hide-select-all]="true"
+        [p-hide-select-all]="false"
         (p-selected)="select1($event)"
         (p-unselected)="select1($event)"
+        (p-all-selected)="selectAll($event)"
+        [p-height]="300"
+        [p-infinite-scroll]="true"
+        [p-infinite-scroll-distance]="20"
+        [p-sort]="true"
+        [p-hide-columns-manager]="true"
+        [p-actions-right]="false"
     >
         
     </po-table>

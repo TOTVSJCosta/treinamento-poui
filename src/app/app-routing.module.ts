@@ -6,6 +6,7 @@ import { MonitorComponent } from './monitor/monitor.component';
 import { Page404Component } from './page404/page404.component';
 import { AppmonitorComponent } from './appmonitor/appmonitor.component';
 import { DbmonitorComponent } from './dbmonitor/dbmonitor.component';
+import { CloseappComponent } from './closeapp/closeapp.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'appmonitor', component: AppmonitorComponent},
   { path: 'dbmonitor', component: DbmonitorComponent},
   { path: 'listagem', component: ListagemComponent},
+  { path: 'closeapp', component: CloseappComponent},
   { path: '**', component: Page404Component},
 
 ];

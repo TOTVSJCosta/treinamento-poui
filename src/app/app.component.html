@@ -1,6 +1,17 @@
 <div class="po-wrapper" *ngIf="isLogged">
   <po-toolbar [p-title]="'Treinamento PO UI'"></po-toolbar>
-  <po-menu [p-menus]="menu" [p-collapsed]="false"></po-menu>
+  
+  <po-menu
+    [p-menus]="menu"
+    [p-collapsed]="true"
+    [p-automatic-toggle]="true"
+  >
+  <div *p-menu-header-template class="po-row">
+    <po-avatar p-size="md" p-src=""></po-avatar>
+    <po-info p-label="Administrador" p-value="Empre 99 Filial 01"></po-info>
+
+  </div>
+  </po-menu>
 
   <router-outlet></router-outlet>
 </div>

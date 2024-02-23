@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AppmonitorComponent } from './appmonitor/appmonitor.component';
 import { DbmonitorComponent } from './dbmonitor/dbmonitor.component';
+import { CloseappComponent } from './closeapp/closeapp.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DbmonitorComponent } from './dbmonitor/dbmonitor.component';
     ListagemComponent,
     DashboardComponent,
     AppmonitorComponent,
-    DbmonitorComponent
+    DbmonitorComponent,
+    CloseappComponent
   ],
   imports: [
     BrowserModule,
