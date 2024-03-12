@@ -1,1 +1,16 @@
-<p>listagem works!</p>
+<po-page-list
+    p-title="Integrações"
+    [p-actions]="actions"
+
+>
+    <po-table
+        p-service-api="//localhost:8080/rest/poui/integracoes"
+        [p-selectable]="true"
+        [p-single-select]="true"
+    >    
+    </po-table>
+</po-page-list>
+
+<po-modal p-size="auto" [p-primary-action]="Confirm" [p-secondary-action]="Cancelar">
+    <po-page-edit p-title="Integrações"> </po-page-edit>
+</po-modal>

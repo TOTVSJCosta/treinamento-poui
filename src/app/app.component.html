@@ -1,21 +1,29 @@
 <div class="po-wrapper" *ngIf="isLogged">
-  <po-toolbar [p-title]="'Treinamento PO UI'"></po-toolbar>
+  <po-toolbar
+    p-title="Treinamento PO UI"
+    [p-profile-actions]="[{label: 'Perfil', icon: 'po-icon-user'}]"
+    [p-profile]="profile"
+  ></po-toolbar>
   
   <po-menu
     [p-menus]="menu"
     [p-collapsed]="true"
     [p-automatic-toggle]="true"
   >
-  <div *p-menu-header-template class="po-row">
-    <po-avatar p-size="md" p-src=""></po-avatar>
-    <po-info p-label="Administrador" p-value="Empre 99 Filial 01"></po-info>
-
-  </div>
+    <ng-template p-menu-header-template>
+      <div class="po-row">
+        <po-avatar class="p-md-2" p-size="md" p-src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"></po-avatar>
+        <div class="p-md-1">
+          <p class="po-font-text-bold">{{ userInfo.nome }}</p>
+          <p class="po-font-tex">Empresa: <b>{{ userInfo.empresa }}</b> Filial: <b>{{ userInfo.filial }}</b></p>
+        </div>
+      </div>
+    </ng-template>
   </po-menu>
 
   <router-outlet></router-outlet>
 </div>
 
 <po-page-login *ngIf="!isLogged"
-  p-authentication-url="http://localhost:8080/rest/poui/login">
+  (p-login-submit)="login($event)">
 </po-page-login>

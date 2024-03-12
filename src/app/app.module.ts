@@ -20,6 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppmonitorComponent } from './appmonitor/appmonitor.component';
 import { DbmonitorComponent } from './dbmonitor/dbmonitor.component';
 import { CloseappComponent } from './closeapp/closeapp.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { EditSA1Component } from './edit-sa1/edit-sa1.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { CloseappComponent } from './closeapp/closeapp.component';
     DashboardComponent,
     AppmonitorComponent,
     DbmonitorComponent,
-    CloseappComponent
+    CloseappComponent,
+    ClientesComponent,
+    EditSA1Component
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { CloseappComponent } from './closeapp/closeapp.component';
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

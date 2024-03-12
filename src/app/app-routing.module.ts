@@ -7,6 +7,8 @@ import { Page404Component } from './page404/page404.component';
 import { AppmonitorComponent } from './appmonitor/appmonitor.component';
 import { DbmonitorComponent } from './dbmonitor/dbmonitor.component';
 import { CloseappComponent } from './closeapp/closeapp.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { EditSA1Component } from './edit-sa1/edit-sa1.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'appmonitor', component: AppmonitorComponent},
   { path: 'dbmonitor', component: DbmonitorComponent},
   { path: 'listagem', component: ListagemComponent},
+  { path: 'clientes', component: ClientesComponent},
+  { path: 'editsa1', component: EditSA1Component},
   { path: 'closeapp', component: CloseappComponent},
   { path: '**', component: Page404Component},
 

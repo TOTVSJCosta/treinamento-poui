@@ -1,0 +1,19 @@
+<po-page-list *ngIf="opcao === 0" p-title="Clientes" [p-actions]="actions">
+    <po-table p-service-api="//localhost:8080/rest/poui/clientes" [p-columns]="colunasSA1" [p-selectable]="true"
+        [p-single-select]="true" [p-hide-columns-manager]="true" [p-height]="450" [p-infinite-scroll]="true"
+        [p-sort]="true"
+        (p-selected)="select1($event)"
+        (p-unselected)="select1($event)"
+        >
+    </po-table>
+</po-page-list>
+
+
+<app-edit-sa1 *ngIf="opcao > 0" [opcao]="opcao" [table]="poTable" (Clicado)="OpcaoClicada($event)"></app-edit-sa1>
+
+<po-modal #modelCliente [p-hide-close]="true">
+    <po-page-edit p-title="Cliente" (p-cancel)="cancel()" (p-save)="save()">
+        <po-dynamic-form [p-fields]="camposSA1">
+        </po-dynamic-form>
+    </po-page-edit>
+</po-modal>

@@ -1,4 +1,72 @@
-<po-page-list #listaconn
+<po-page-list>
+    <po-breadcrumb
+        [p-items]="[
+            { label: 'POUI Portal', link: 'home' },
+            { label: 'Monitoramento' },
+            { label: 'AppMonitor' }
+        ]"
+    ></po-breadcrumb>
+
+    <p class="po-font-subtitle po-mt-2">Monitor da Aplicação</p><po-divider></po-divider>
+
+    <div class="po-mb-1">
+        <po-button id="sendMsg"
+            (click)="evalLine($event)"
+            [p-disabled]="linhasSelecionadas == 0"
+            p-tooltip="Enviar mensagem"
+            p-icon="po-icon-sms"
+            p-kind="tertiary"
+            p-size="small" >
+        </po-button>
+        <po-button id="dropUsers"
+            (click)="evalLine($event)"
+            [p-disabled]="linhasSelecionadas == 0"
+            p-tooltip="Desconectar usuário(s)"
+            p-icon="po-icon-close"
+            p-kind="tertiary"
+            p-size="small" >
+        </po-button>
+        <po-button
+
+            p-tooltip="Bloquear servidor"
+            p-icon="po-icon-lock"
+            p-kind="tertiary"
+            p-size="small" >
+        </po-button>
+        <po-button
+
+            p-tooltip="Parar servidor da aplicação"
+            p-icon="po-icon-clear-content"
+            p-kind="tertiary"
+            p-size="small" >
+        </po-button>
+        <po-button
+
+            p-tooltip="Atualizar"
+            p-icon="po-icon-refresh"
+            p-kind="tertiary"
+            p-size="small" >
+        </po-button>
+    </div>
+    <po-table #table
+        [p-infinite-scroll]="true"
+        [p-height]="450"
+        [p-hide-columns-manager]="true"
+        [p-selectable]="true"
+        [p-sort]="true"
+        [p-striped]="true"
+        p-service-api="//localhost:8080/rest/poui/AppMonitor"
+        (p-selected)="select($event)"
+        (p-all-selected)="select($event)"
+        (p-unselected)="select($event)"
+        (p-all-unselected)="select($event)"
+
+    ></po-table>
+
+
+</po-page-list>
+
+<!--po-page-list #listaconn
     p-title="Monitor Application Server"
     [p-actions]="actions"
     [p-breadcrumb]="breadcrumb"
@@ -20,8 +88,5 @@
         [p-hide-columns-manager]="true"
         [p-actions-right]="false"
     >
-        
     </po-table>
-
-
-</po-page-list>
+</po-page-list-->
